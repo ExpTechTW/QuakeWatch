@@ -69,7 +69,10 @@ pip install -r requirements.txt
 - **Timestamp**: NTP 時間戳記（毫秒，Unix epoch）
 - **X, Y, Z**: 三軸加速度（Gal）
 
-> [!NOTE] **感測器資料說明**
+> [!NOTE]
+>
+> ## 感測器資料說明
+>
 > 感測器原始資料輸出，無額外濾波處理。
 
 #### 2. 震度資料封包（0x49）
@@ -93,7 +96,9 @@ pip install -r requirements.txt
 - **Intensity**: JMA 震度值
 - **a**: PGA 值（Gal）
 
-> [!NOTE] **震度計算參數**
+> [!NOTE]
+>
+> ## 震度計算參數
 >
 > **資料窗參數**：
 >
