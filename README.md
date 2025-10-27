@@ -51,7 +51,7 @@ pip install -r requirements.txt
 
 #### 1. 感測器資料封包（0x53）
 
-**頻率**: 50 Hz（每 20ms 一筆）
+**頻率**: 50 Hz（每 0.5 一次 一次 25 筆）
 **大小**: 21 bytes
 
 ```
@@ -69,16 +69,9 @@ pip install -r requirements.txt
 - **Timestamp**: NTP 時間戳記（毫秒，Unix epoch）
 - **X, Y, Z**: 三軸加速度（Gal），高通濾波後
 
-**Python 解析**:
-
-```python
-header, = struct.unpack('B', data[0:1])
-timestamp, x, y, z = struct.unpack('<Qfff', data[1:21])
-```
-
 #### 2. 震度資料封包（0x49）
 
-**頻率**: 2 Hz（每 0.5 秒一筆）
+**頻率**: 2 Hz（每 0.5 秒一次 一次 1 筆）
 **大小**: 17 bytes
 
 ```
@@ -107,7 +100,7 @@ timestamp, x, y, z = struct.unpack('<Qfff', data[1:21])
 
 ### 來源
 
-1. **有 NTP 同步**: 使用 NTP 時間（`ntpManager.getTimeMs()`）
+1. **有 NTP 同步**: 使用 NTP 時間
 2. **無 NTP 同步**: 使用 `0`
 
 ### 錯誤處理
